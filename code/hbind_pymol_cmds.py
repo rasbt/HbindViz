@@ -13,6 +13,7 @@ def generate_pymol_commands(inpath):
 
     prot_resid = []
     prot_restype = []
+    prot_chain_id = []
     prot_atom = []
     lig_atomid = []
     interact_type = []
@@ -24,8 +25,9 @@ def generate_pymol_commands(inpath):
             interact_type.append(line[1].strip())
             lig_atomid.append(line[3].strip())
             prot_restype.append(line[6].strip())
-            prot_resid.append(line[7].strip())
-            prot_atom.append(line[8].strip())
+            prot_chain_id.append(line[7].strip())
+            prot_resid.append(line[8].strip())
+            prot_atom.append(line[9].strip())
 
     print('hide lines')
     print('show cartoon')
@@ -43,25 +45,25 @@ def generate_pymol_commands(inpath):
     saltb = False
     hbond = False
 
-    for a, b, c, d, e in zip(prot_restype, prot_resid,
-                             prot_atom, lig_atomid, interact_type):
-        print('show sphere, /protein///%s`%s/%s' % (a, b, c))
+    for a, b, c, d, e, f in zip(prot_chain_id, prot_restype, prot_resid,
+                                prot_atom, lig_atomid, interact_type):
+        print('show sphere, /protein//%s/%s`%s/%s' % (a, b, c, d))
 
-        if e == 'hbond':
-            print('distance hbond, /protein///%s`%s/%s,'
-                  '(ligand and id %s)' % (a, b, c, d))
+        if f == 'hbond':
+            print('distance hbond, /protein//%s/%s`%s/%s,'
+                  '(ligand and id %s)' % (a, b, c, d, e))
             hbond = True
-        elif e == 'saltb':
-            print('distance saltb, /protein///%s`%s/%s,'
-                  '(ligand and id %s)' % (a, b, c, d))
+        elif f == 'saltb':
+            print('distance saltb, /protein//%s/%s`%s/%s,'
+                  '(ligand and id %s)' % (a, b, c, d, e))
             saltb = True
-        elif e == 'metal':
-            print('distance metal, /protein///%s`%s/%s,'
-                  '(ligand and id %s)' % (a, b, c, d))
+        elif f == 'metal':
+            print('distance metal, /protein//%s/%s`%s/%s,'
+                  '(ligand and id %s)' % (a, b, c, d, e))
             metal = True
-        elif e == 'ld_metal':
-            print('distance ld_metal, /protein///%s`%s/%s,'
-                  '(ligand and id %s)' % (a, b, c, d))
+        elif f == 'ld_metal':
+            print('distance ld_metal, /protein//%s/%s`%s/%s,'
+                  '(ligand and id %s)' % (a, b, c, d, e))
             ld_metal = True
 
     if hbond:
