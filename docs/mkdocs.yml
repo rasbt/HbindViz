@@ -1,0 +1,37 @@
+site_name: HbindViz
+site_url: http://psa-lab.github.io/hbindviz
+site_author: Sebastian Raschka
+site_description: Tools for generating visualizations of the hydrogen bond interactions identified by Hbind.
+
+repo_url: https://github.com/psa-lab/hbindviz
+
+docs_dir: sources
+site_dir: html
+theme_dir: readthedocs
+
+site_favicon: favicon.ico
+
+markdown_extensions:
+  - extra
+  - tables
+  - fenced_code
+  - mathjax
+extra_javascript:
+  - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
+  - mathjaxhelper.js
+
+copyright: Copyright &copy; 2018 Michigan State University. Developed in the <a href="http://www.kuhnlab.bmb.msu.edu">PSA Lab</a>.<br><em><a href="cite">Sebastian Raschka et al. 2018</a></em>.
+
+
+extra_css:
+  - extra.css
+
+pages:
+- Home: index.md
+- Installation: installation.md
+- User Guide: user_guide.md
+- About:
+  - Contact: contact.md
+  - Release Notes: changelog.md
+  - License: license.md
+  - Citing HbindViz: cite.md

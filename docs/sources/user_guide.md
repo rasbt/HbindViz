@@ -1,19 +1,4 @@
-### HbindViz -- Generating hydrogen-bond interaction visualizations from Hbind
-
-
-![](docs/sources/images/hbind-viz-logo.jpg)
-
-
-Tools for generating visualizations of the hydrogen bond interactions identified by Hbind.
-
----
-
-[Hbind](https://github.com/psa-lab/Hbind) is software for rigorously defining intermolecular H-bonds by donor/acceptor chemistry and geometric constraints, which was developed, used, and described in detail in
-
-- Sebastian Raschka, Wolf A., Bemister-Buffington J., and Kuhn L.A. (2018) "Protein-ligand interfaces are polarized: Discovery of a strong trend for intermolecular hydrogen bonds to favor donors on the protein side with implications for predicting and designing ligand complexes." J. Computer-Aided Molec. Design [in revision]
-
-
---- 
+## User Guide
 
 ## Visualization Hydrogen Bonds in PyMOL
 
@@ -27,7 +12,7 @@ Visualizing H-bonds identified via Hbind is a 3-step process:
 
 First, an Hbind interaction table that lists the hydrogen bond interactions between a protein and its ligand has to be generated. The Hbind open source software is available at [https://github.com/psa-lab/Hbind](https://github.com/psa-lab/Hbind).
 
-Once you have it installed, you can execute the following command based on the two example files provided in the [`./example_files`](https://github.com/psa-lab/HbindViz/tree/master/example_files) subdirectory (the structure of an [PKCI-substrate analog](https://www.rcsb.org/pdb/explore.do?structureId=1kpf) with its ligand, adenosine monophsophate):
+Once you have it installed, you can execute the following command based on the two example files provided in the [`./example_files`](example_files) subdirectory (the structure of an [PKCI-substrate analog](https://www.rcsb.org/pdb/explore.do?structureId=1kpf) with its ligand, adenosine monophsophate):
 
     hbind --protein ./example_files/1KPF.pdb --ligand ./example_files/1KPF_AMP.mol2 
 
@@ -131,15 +116,15 @@ If you are using a Linux/Unix terminal, you can redirect the outputs from Hbind 
 
 After obtaining the commands for creating the H-bond visualization in PyMOL (see Step 2), open the protein and ligand structures in PyMOL:
 
-![](docs/sources/images/step03_1.png)
+![](images/step03_1.png)
 
 
 Next, rename the protein structure (here: "1KPF") to "protein" and the ligand structure (here: "1KPF_AMP") to "ligand" as shown in the screenshot below:
 
-![](docs/sources/images/step03_2.png)
+![](images/step03_2.png)
 
 Finally, copy and paste the commands from Step 2 into the PyMOL command prompt and hit enter to see the hydrogen bonds visualized:
 
-![](docs/sources/images/step03_3.png)
+![](images/step03_3.png)
 
 (Note that the Hbind table only lists the heavy atoms that participate in hydrogen bond interactions; thus, hydrogen positions are ignored in the HbondViz script, and you may want to hide these in PyMOL.)
