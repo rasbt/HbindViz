@@ -29,7 +29,7 @@ First, an Hbind interaction table that lists the hydrogen bond interactions betw
 
 Once you have it installed, you can execute the following command based on the two example files provided in the [`./example_files`](https://github.com/psa-lab/HbindViz/tree/master/example_files) subdirectory (the structure of an [PKCI-substrate analog](https://www.rcsb.org/pdb/explore.do?structureId=1kpf) with its ligand, adenosine monophsophate):
 
-    hbind --protein ./example_files/1KPF.pdb --ligand ./example_files/1KPF_AMP.mol2 
+    hbind -p ./example_files/1KPF.pdb -l ./example_files/1KPF_AMP.mol2 
 
 After executing the command above, you should see the following output in your terminal:
 
